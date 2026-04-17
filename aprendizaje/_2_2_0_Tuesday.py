@@ -32,14 +32,22 @@ class Empleado:
     def __repr__(self):
         return f"Nombre del empleado: {self.name}. Salario: {self.salario}. Departamento: {self.departamento}. Antiguedad: {self.antiguedad}"
 
+"""
 Levi = Empleado("Levi", 200, "A1", 1)
 Empleado.dar_bono(Levi)
 print(str(Levi))
 print(repr(Levi))
+"""
 
 
 class Gerente(Empleado):
-    # Hereda de Empleado
+    def __init__(self, name: str, salario: float, equipo: list):
+        # Hereda de Empleado
+        super().__init__(name, salario, "Gerencia")
+        #super().__init__(name) = utiliza lo que ya está arriba, no duplica la variable
+        self.equipo = equipo
+
+
     # Agrega atributo: lista de empleados a cargo
     # Sobreescribe calcular_bono(): bono base del 25%
     # Agrega método: agregar_empleado(empleado)

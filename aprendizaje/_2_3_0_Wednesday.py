@@ -20,7 +20,9 @@ class BankAccount:
 
     def __repr__(self):
         return f"Nombre de cuenta: {self.owner}. Balance: {self._balance}. Pin: {self.__pin}"
-    
+
+
+"""
 cuenta = BankAccount("Ana", 1500)
 print(cuenta)
 
@@ -28,9 +30,12 @@ print(cuenta._balance)       # funciona, pero es mala práctica
 #print(cuenta.__pin)          # AttributeError ← Python lo renombró
 print(cuenta._BankAccount__pin)  # así se accede, pero NUNCA hagan esto
 
+
 cuenta._balance = 10     #-10 manda error en VSC (se cumple lo esperado)
+"""
 
 separación_de_bloques = "-----------------------------"
+#-------------------------------------------------------------------------
 
 class BankAccount2:
     def __init__(self, owner: str, balance: float = 0.0):
@@ -49,7 +54,7 @@ class BankAccount2:
         self._transactions.append(f"+ ${amount:.2f}")
         print(f"Depósito exitoso. Nuevo saldo: ${self._balance:.2f}")
 
-    def withdraw(self, amount: float) -> None:
+    def retirar(self, amount: float) -> None:
         if amount <= 0:
             raise ValueError("El retiro debe ser mayor a cero")
         if amount > self._balance:
@@ -75,8 +80,10 @@ class BankAccount2:
         return round(amount, 2) == amount
     
 
+"""
 Levi = BankAccount2("Levi", 1000)
 Levi.deposit(100)
+"""
 
 #@classmethod
 
@@ -89,6 +96,8 @@ class Persona:
         name, age = texto.split(",")
         return cls(name, int(age))
     
+"""
 p = Persona.desde_texto("Levis, 17")
 print(p.name)
 print(p.age)
+"""

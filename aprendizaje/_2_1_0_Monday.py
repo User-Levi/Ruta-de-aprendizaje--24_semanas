@@ -14,6 +14,7 @@ class coche:
             print(f"El {self.marca} {self.modelo}, se ha apagado")
 
 
+"""
 tesla = coche("Tesla", "X")
 chevrolet = coche("Chevrolet", "Camaro 2020")
 
@@ -34,3 +35,4 @@ chevrolet.detener()
 
 print(tesla.arrancado)
 print(chevrolet.arrancado)
+"""
